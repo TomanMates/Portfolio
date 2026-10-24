@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/toman/Downloads/portfolio.html#top -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matěj Toman – Web developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Matěj Toman – Web developer_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F5FF; --surface:#FFFFFF; --ink:#1A1530; --muted:#625C7A; --line:#E1DCF2;
+  --accent:#854DFF; --accent-ink:#FFFFFF; --glow:rgba(133,77,255,.28);
+  --live:#1E9E62; --wip:#D98A00; --plan:#8A83A6;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0A1A; --surface:#171229; --ink:#F0EDFB; --muted:#A39CBF; --line:#2B2445;
+    --accent:#9B6BFF; --accent-ink:#0D0A1A; --glow:rgba(133,77,255,.35);
+    --live:#4CD08E; --wip:#F0B040; --plan:#8A83A6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0A1A; --surface:#171229; --ink:#F0EDFB; --muted:#A39CBF; --line:#2B2445;
+  --accent:#9B6BFF; --accent-ink:#0D0A1A; --glow:rgba(133,77,255,.35);
+  --live:#4CD08E; --wip:#F0B040; --plan:#8A83A6; color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--font)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+strong{font-weight:700;color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;text-decoration:none}
+.logo{width:2rem;height:2rem;border-radius:.6rem;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;font-size:.95rem}
+.links{display:flex;align-items:center;gap:1.75rem}
+.links a:not(.btn){text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+.links a:not(.btn):hover{color:var(--ink)}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);background:var(--surface);transition:transform .15s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.nav .btn{padding:.55rem 1.1rem;font-size:.92rem}
+
+/* hero */
+.hero{position:relative;text-align:center;padding:6rem 0 4rem;overflow:hidden}
+.hero::before{content:"";position:absolute;left:50%;top:-8rem;width:60rem;max-width:140%;height:34rem;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent);z-index:-1}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1.05;letter-spacing:-0.035em;font-weight:500;margin:0 auto 1.5rem;max-width:18ch}
+.hero h1 strong{font-weight:800;color:var(--accent)}
+.hero p{max-width:38rem;margin:0 auto 2rem;color:var(--muted);font-size:1.2rem}
+.cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.mock{margin:4rem auto 0;max-width:46rem;background:var(--surface);border:1px solid var(--line);border-radius:1.25rem;box-shadow:0 30px 80px -30px var(--glow);overflow:hidden;text-align:left}
+.mock .bar{display:flex;gap:.4rem;padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+.mock .bar i{width:.7rem;height:.7rem;border-radius:50%;background:var(--line)}
+.mock .body{padding:2rem;display:grid;gap:.8rem}
+.mock .body b{display:block;height:1.2rem;border-radius:.4rem;background:var(--line)}
+.mock .body b:nth-child(1){width:55%;height:2rem;background:var(--accent);opacity:.85}
+.mock .body b:nth-child(2){width:85%}.mock .body b:nth-child(3){width:70%}
+
+/* sections */
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-0.025em;line-height:1.15;margin:0 0 .75rem;font-weight:800}
+.lead{color:var(--muted);max-width:40rem;margin:0 0 2.5rem}
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:1.25rem;padding:1.6rem}
+.card h3{margin:0 0 .5rem;font-size:1.25rem;letter-spacing:-0.01em}
+.card p{margin:0;color:var(--muted)}
+.price{display:block;margin-top:1rem;font-weight:800;color:var(--accent)}
+
+/* projects */
+.proj{display:flex;flex-direction:column;padding:0;overflow:hidden;text-decoration:none;transition:transform .15s,border-color .15s}
+a.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.thumb{aspect-ratio:16/10;display:grid;place-items:center;font-weight:800;font-size:2.6rem;letter-spacing:-0.03em;color:#fff;background-size:cover;background-position:center}
+.pbody{padding:1.3rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.pbody h3{margin:0;font-size:1.2rem}
+.pbody p{margin:0;color:var(--muted);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.6rem}
+.tags span{font-size:.8rem;padding:.1rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.85rem}
+.status::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--c)}
+.s-live{--c:var(--live)}.s-wip{--c:var(--wip)}.s-planned{--c:var(--plan)}
+.proj.empty{border-style:dashed;opacity:.85}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
+.about p{color:var(--muted);margin:0 0 1rem}
+.traits{display:flex;flex-direction:column;gap:.75rem}
+.trait{display:flex;gap:.8rem;align-items:center;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:1rem;font-weight:700}
+.trait::before{content:"✓";display:grid;place-items:center;flex:none;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.85rem}
+
+/* quotes */
+.quote{display:flex;flex-direction:column;gap:1.2rem}
+.quote p{color:var(--ink);font-size:1rem}
+.who{display:flex;align-items:center;gap:.75rem;margin-top:auto}
+.av{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800}
+.who small{display:block;color:var(--muted)}
+
+/* contact */
+.contact{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:2rem;padding:4rem 1.5rem;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:auto 0 -12rem 0;height:20rem;background:radial-gradient(closest-side,var(--glow),transparent)}
+.contact>*{position:relative}
+.contact p{color:var(--muted);margin:0 auto 1.75rem;max-width:30rem}
+footer{padding:3rem 0 4rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;color:var(--muted)}
+footer a{margin-right:1.25rem;text-decoration:none;font-weight:600}
+footer a:hover{color:var(--accent)}
+.copy{background:none;border:0;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;padding:0}
+
+@media (max-width:44rem){
+  .links a:not(.btn){display:none}
+  .about{grid-template-columns:1fr}
+  .hero{padding-top:4rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.btn:hover,a.proj:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="file:///C:/Users/toman/Downloads/portfolio.html#top"><span class="logo" id="logo">M</span><span id="brandName">Matěj Toman</span></a>
+    <nav class="links">
+      <a href="file:///C:/Users/toman/Downloads/portfolio.html#services">Services</a><a href="file:///C:/Users/toman/Downloads/portfolio.html#portfolio">Portfolio</a><a href="file:///C:/Users/toman/Downloads/portfolio.html#about">About</a>
+      <a class="btn primary" href="file:///C:/Users/toman/Downloads/portfolio.html#contact" id="navCta">I want a website!</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1 id="heroTitle"><strong>Modern website</strong> tailored to bring your vision to life.</h1>
+    <p id="heroText">I build websites that <strong>look great</strong> and, above all, <strong>work well</strong>. Every project gets an individual approach.</p>
+    <div class="cta"><a class="btn primary" href="file:///C:/Users/toman/Downloads/portfolio.html#contact">Contact me</a><a class="btn" href="file:///C:/Users/toman/Downloads/portfolio.html#portfolio">Portfolio</a></div>
+    <div class="mock" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="body"><b></b><b></b><b></b></div></div>
+  </div>
+
+  <section id="services"><div class="wrap">
+    <h2>My services</h2><p class="lead" id="servicesLead">Choose what fits your project.</p>
+    <div class="grid" id="services-list"><div class="card"><h3>Custom website</h3><p>Design and development from scratch: portfolios, company sites, or web apps.</p><span class="price">From 50 €</span></div><div class="card"><h3>Improving an existing website</h3><p>Need to add, tweak, or extend something? I’ll handle the changes.</p><span class="price"> 30 €</span></div><div class="card"><h3>Management &amp; hosting</h3><p>Stable hosting, security, and ongoing care, so you don’t have to.</p><span class="price">From 10 € / month</span></div></div>
+  </div></section>
+
+  <section id="portfolio"><div class="wrap">
+    <h2>Portfolio</h2><p class="lead" id="portfolioLead">Projects I’ve worked on, alone or with others. New ones are added here as I finish them.</p>
+    <div class="grid" id="projects"><a class="card proj" href="file:///C:/Users/toman/Downloads/portfolio.html#top"><div class="thumb" style="background: linear-gradient(135deg, rgb(133, 77, 255), rgb(26, 21, 48));">T</div><div class="pbody"><span class="status s-live">Live</span><h3>This portfolio</h3><p>My first website. It collects everything I build.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div></a><div class="card proj empty"><div class="thumb" style="background: linear-gradient(135deg, rgb(59, 130, 246), rgb(26, 21, 48));">N</div><div class="pbody"><span class="status s-planned">Planned</span><h3>Next project</h3><p>One sentence: what it does and who it is for.</p><div class="tags"><span>Idea</span></div></div></div></div>
+  </div></section>
+
+  <section id="about"><div class="wrap about">
+    <div><h2>About me</h2><div id="aboutText"><p>Hi, I’m <strong>Matěj</strong>. Im 17, years old and currently studying computer science on SŠTE Brno Olomoucká and also do orienttering on professional level, while trying to learn web coding.</p><p>Write a second paragraph about what you value in collaboration and what you do outside the computer.</p></div></div>
+    <div class="traits" id="traits"><div class="trait">Clear communication</div><div class="trait">Personal approach</div><div class="trait">Satisfaction guarantee</div></div>
+  </div></section>
+
+
+  <section id="contact"><div class="wrap"><div class="contact">
+    <h2>Have a project in mind?</h2>
+    <p>Just drop me a message. We’ll move it forward together.</p>
+    <a class="btn primary" id="mailBtn" href="mailto:toman.matej@seznam.cz">Messageme </a>
+  </div></div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><strong id="footName">Matěj Toman</strong><br><span id="footRole">Web developer</span><br><button class="copy" id="copyMail" type="button">toman.matej@seznam.cz</button></div>
+  <div id="socials"><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a><a href="https://www.instagram.com/toman_matej_" target="_blank" rel="noopener">Instagram</a></div>
+  <div id="copyright">© 2026 Matěj Toman</div>
+</div></footer>
+
+<script>
+/* ============================================================
+   EDIT ONLY THIS BLOCK – the whole page is built from it.
+   Wrap words in **double stars** to make them bold.
+   ============================================================ */
+const SITE = {
+  name: "Matěj Toman",
+  role: "Web developer",
+  email: "toman.matej@seznam.cz",
+  navButton: "I want a website!",
+  headline: "**Modern website** tailored to bring your vision to life.",
+  intro: "I build websites that **look great** and, above all, **work well**. Every project gets an individual approach.",
+  servicesLead: "Choose what fits your project.",
+  portfolioLead: "Projects I’ve worked on, alone or with others. New ones are added here as I finish them.",
+  about: [
+    "Hi, I’m **Matěj**. Im 17, years old and currently studying computer science on SŠTE Brno Olomoucká and also do orienttering on professional level, while trying to learn web coding.",
+    "Write a second paragraph about what you value in collaboration and what you do outside the computer."
+  ],
+  traits: ["Clear communication", "Personal approach", "Satisfaction guarantee"],
+  socials: [
+    { label: "GitHub",    url: "https://github.com/your-username" },
+    { label: "Instagram", url: "https://www.instagram.com/toman_matej_" }
+  ]
+};
+
+const SERVICES = [
+  { title: "Custom website", text: "Design and development from scratch: portfolios, company sites, or web apps.", price: "From 50 €" },
+  { title: "Improving an existing website", text: "Need to add, tweak, or extend something? I’ll handle the changes.", price: " 30 €" },
+  { title: "Management & hosting", text: "Stable hosting, security, and ongoing care, so you don’t have to.", price: "From 10 € / month" }
+];
+
+/* status: "live" | "wip" | "planned"
+   url: link to the web ("" = no link yet)
+   image: optional picture URL (inline data: image only – see note in chat). Leave "" for a colour tile. */
+const PROJECTS = [
+  { title: "This portfolio", description: "My first website. It collects everything I build.", tags: ["HTML", "CSS", "JavaScript"], status: "live", url: "#top", image: "", color: "#854DFF" },
+  { title: "Next project", description: "One sentence: what it does and who it is for.", tags: ["Idea"], status: "planned", url: "", image: "", color: "#3B82F6" }
+  /* To add a web: copy one { ... } block, put a comma after the previous one, change the text. */
+];
+/* ============================================================ */
+
+const $ = id => document.getElementById(id);
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x) e.textContent = x; return e; };
+const rich = (node, str) => str.split("**").forEach((part, i) => node.appendChild(i % 2 ? Object.assign(el("strong"), { textContent: part }) : document.createTextNode(part)));
+const isExt = u => /^https?:/.test(u);
+const safeColor = c => /^#[0-9a-fA-F]{3,8}$/.test(c) ? c : "#854DFF";
+const LABEL = { live: "Live", wip: "In progress", planned: "Planned" };
+
+document.title = SITE.name + " – " + SITE.role;
+$("brandName").textContent = SITE.name;
+$("logo").textContent = SITE.name.trim().charAt(0).toUpperCase();
+$("navCta").textContent = SITE.navButton;
+rich($("heroTitle"), SITE.headline);
+rich($("heroText"), SITE.intro);
+$("servicesLead").textContent = SITE.servicesLead;
+$("portfolioLead").textContent = SITE.portfolioLead;
+SITE.about.forEach(t => { const p = el("p"); rich(p, t); $("aboutText").appendChild(p); });
+SITE.traits.forEach(t => $("traits").appendChild(el("div", "trait", t)));
+$("mailBtn").href = "mailto:" + SITE.email;
+$("footName").textContent = SITE.name;
+$("footRole").textContent = SITE.role;
+$("copyMail").textContent = SITE.email;
+$("copyright").textContent = "© " + new Date().getFullYear() + " " + SITE.name;
+SITE.socials.forEach(s => { const a = el("a", "", s.label); a.href = s.url; a.target = "_blank"; a.rel = "noopener"; $("socials").appendChild(a); });
+
+$("copyMail").addEventListener("click", async () => {
+  const b = $("copyMail");
+  try { await navigator.clipboard.writeText(SITE.email); b.textContent = "Copied"; }
+  catch (e) { location.href = "mailto:" + SITE.email; }
+  setTimeout(() => b.textContent = SITE.email, 1500);
+});
+
+SERVICES.forEach(s => {
+  const c = el("div", "card"); c.append(el("h3", "", s.title), el("p", "", s.text), el("span", "price", s.price));
+  $("services-list").appendChild(c);
+});
+
+PROJECTS.forEach(p => {
+  const has = p.url && p.url.trim() !== "";
+  const card = el(has ? "a" : "div", "card proj" + (has ? "" : " empty"));
+  if (has) { card.href = p.url; if (isExt(p.url)) { card.target = "_blank"; card.rel = "noopener"; } }
+  const th = el("div", "thumb", p.image ? "" : p.title.trim().charAt(0).toUpperCase());
+  th.style.background = p.image ? "center/cover url('" + encodeURI(p.image) + "')" : "linear-gradient(135deg," + safeColor(p.color) + ",#1A1530)";
+  const body = el("div", "pbody");
+  body.append(el("span", "status s-" + (p.status || "planned"), LABEL[p.status] || "Planned"), el("h3", "", p.title), el("p", "", p.description));
+  const tags = el("div", "tags"); (p.tags || []).forEach(t => tags.appendChild(el("span", "", t)));
+  body.appendChild(tags);
+  card.append(th, body);
+  $("projects").appendChild(card);
+});
+
+REVIEWS.forEach(r => {
+  const c = el("div", "card quote"); const who = el("div", "who"); const d = el("div");
+  d.append(el("strong", "", r.name), el("small", "", r.from));
+  who.append(el("span", "av", r.name.trim().charAt(0).toUpperCase()), d);
+  c.append(el("p", "", r.text), who);
+  $("quotes").appendChild(c);
+});
+if (!REVIEWS.length) $("reviews").remove();
+</script>
+
+
+</body></html>
